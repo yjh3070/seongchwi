@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5EEFF">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="360dp"
+        android:layout_height="501dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="328dp"
+            android:layout_height="223dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/main_png" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="353dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="환영합니다,"
+                android:textColor="#4500AC"
+                android:textSize="27dp"
+                tools:layout_conversion_absoluteHeight="29dp"
+                tools:layout_conversion_absoluteWidth="133dp"
+                tools:layout_editor_absoluteX="119dp" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" asdf 님"
+                android:textColor="#4500AC"
+                android:textSize="22dp"
+                tools:layout_conversion_absoluteHeight="1dp"
+                tools:layout_conversion_absoluteWidth="74dp"
+                tools:layout_editor_absoluteX="271dp"
+                tools:layout_editor_absoluteY="12dp" />
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:columnCount="2"
+            android:orientation="vertical"
+            android:rowCount="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="148dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="7dp"
+                app:srcCompat="@drawable/conference" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="147dp"
+                android:layout_height="97dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="9dp"
+                app:srcCompat="@drawable/hire" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="148dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="7dp"
+                app:srcCompat="@drawable/company" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="148dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="7dp"
+                app:srcCompat="@drawable/employment" />
+
+
+        </GridLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
