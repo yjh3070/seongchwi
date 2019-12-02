@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/slidingLayer1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/scroll"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +18,8 @@
     <LinearLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/scroll"
         android:orientation="vertical">
 
         <ImageView
@@ -119,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:text="참가비용 : 무료"
                 android:textColor="#715392"/>
         </LinearLayout>
@@ -141,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:text="위치 : 양재 더케이호텔 2F 가야금홀"
                 android:textColor="#715392"/>
         </LinearLayout>
@@ -163,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:text="기술분야 : 웹 프론트 엔드"
                 android:textColor="#715392"/>
         </LinearLayout>
@@ -186,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:textSize="14dp"
+                android:textSize="15dp"
                 android:text="추천대상 : 웹 프론트 엔드 개발자"
                 android:textColor="#715392"/>
         </LinearLayout>

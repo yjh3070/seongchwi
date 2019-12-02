@@ -1,13 +1,20 @@
 package com.cookandroid.seongchwi;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
 import android.view.WindowManager;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
+import com.prolificinteractive.materialcalendarview.DayViewDecorator;
+import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import java.sql.Date;
@@ -45,6 +52,11 @@ public class ConferenceActivity extends BaseActivity{
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
 
+        conference_calendar.addDecorators(
+                new SundayDecorator(),
+                new SaturdayDecorator(),
+                new oneDayDecorator());
+
         conference_calendar.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
@@ -53,5 +65,72 @@ public class ConferenceActivity extends BaseActivity{
         });
 
 
+
+    }
+}
+
+class SundayDecorator implements DayViewDecorator {
+
+    private final Calendar calendar = Calendar.getInstance();
+
+    public SundayDecorator() {
+    }
+
+    @Override
+    public boolean shouldDecorate(CalendarDay day) {
+        day.copyTo(calendar);
+        int weekDay = calendar.get(Calendar.DAY_OF_WEEK);
+        return weekDay == Calendar.SUNDAY;
+    }
+
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.addSpan(new ForegroundColorSpan(Color.RED));
+    }
+}
+
+class SaturdayDecorator implements DayViewDecorator {
+
+    private final Calendar calendar = Calendar.getInstance();
+
+    public SaturdayDecorator() {
+    }
+
+    @Override
+    public boolean shouldDecorate(CalendarDay day) {
+        day.copyTo(calendar);
+        int weekDay = calendar.get(Calendar.DAY_OF_WEEK);
+        return weekDay == Calendar.SATURDAY;
+    }
+
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.addSpan(new ForegroundColorSpan(Color.BLUE));
+    }
+}
+
+class oneDayDecorator implements DayViewDecorator {
+
+    private CalendarDay date;
+
+    public oneDayDecorator() {
+        date = CalendarDay.today();
+    }
+
+    @Override
+    public boolean shouldDecorate(CalendarDay day) {
+        return date != null && day.equals(date);
+    }
+
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.addSpan(new ForegroundColorSpan(Color.parseColor("#400188")));
+    }
+
+    /**
+     * We're changing the internals, so make sure to call {@linkplain MaterialCalendarView#invalidateDecorators()}
+     */
+    public void setDate(Date date) {
+        this.date = CalendarDay.from(date);
     }
 }
