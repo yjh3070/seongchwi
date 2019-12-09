@@ -107,7 +107,7 @@
                 app:srcCompat="@drawable/hire" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/company"
                 android:layout_width="148dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="9dp"
