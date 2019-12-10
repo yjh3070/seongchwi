@@ -12,7 +12,7 @@ public class MainActivity extends BaseActivity{
 
     TextView name;
 
-    ImageView conference, company;
+    ImageView conference, company, hire, employ;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,8 @@ public class MainActivity extends BaseActivity{
         name = (TextView)findViewById(R.id.name);
         conference = (ImageView)findViewById(R.id.conference);
         company = (ImageView)findViewById(R.id.company);
+        hire = (ImageView)findViewById(R.id.hire);
+        employ = (ImageView)findViewById(R.id.employ);
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
@@ -42,6 +44,22 @@ public class MainActivity extends BaseActivity{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, CompanyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        hire.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HireActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        employ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EmployActivity.class);
                 startActivity(intent);
             }
         });

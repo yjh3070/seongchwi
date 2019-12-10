@@ -99,7 +99,7 @@
                 app:srcCompat="@drawable/conference" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/hire"
                 android:layout_width="147dp"
                 android:layout_height="97dp"
                 android:layout_marginTop="7dp"
@@ -115,7 +115,7 @@
                 app:srcCompat="@drawable/company" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/employ"
                 android:layout_width="148dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="9dp"
