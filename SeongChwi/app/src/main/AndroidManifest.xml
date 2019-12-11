@@ -22,7 +22,7 @@
         <activity android:name=".ConferenceActivity"/>
         <activity android:name=".CompanyActivity"/>
         <activity android:name=".HireActivity"/>
-        <activity android:name=".EmployActivity"/>           
+        <activity android:name=".EmployActivity"/>
     </application>
 
 </manifest>

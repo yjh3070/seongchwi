@@ -16,7 +16,9 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.StyleSpan;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -25,6 +27,9 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+
+import org.w3c.dom.Text;
+
 import java.sql.Date;
 import java.util.Calendar;
 
@@ -34,6 +39,15 @@ public class ConferenceActivity extends BaseActivity{
 
     MaterialCalendarView conference_calendar;
     Toolbar toolbar;
+    View content1, content2;
+    TextView text, text2, today;
+    static CalendarDay selectedDay = null;
+
+    String DATE;
+
+    int year;
+    int month;
+    int day;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +60,11 @@ public class ConferenceActivity extends BaseActivity{
         setSupportActionBar(toolbar);
 
         conference_calendar = (MaterialCalendarView)findViewById(R.id.conference_calendar);
+        content1 = (View)findViewById(R.id.content);
+        content2 = (View)findViewById(R.id.content2);
+        text = (TextView)findViewById(R.id.date);
+        text2 = (TextView)findViewById(R.id.date2);
+        today = (TextView)findViewById(R.id.today);
 
         final long now = System.currentTimeMillis();
         conference_calendar.setSelectionMode(MaterialCalendarView.SELECTION_MODE_SINGLE);
@@ -71,7 +90,35 @@ public class ConferenceActivity extends BaseActivity{
         conference_calendar.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+                selectedDay = date;
+                DATE = selectedDay.toString();
+                String[] parsedDATA = DATE.split("[{]");
+                parsedDATA = parsedDATA[1].split("[}]");
+                parsedDATA = parsedDATA[0].split("-");
+                year = Integer.parseInt(parsedDATA[0]);
+                month = Integer.parseInt(parsedDATA[1])+1;
+                day = Integer.parseInt(parsedDATA[2]);
 
+                text.setText(year + ". " + month + ". " + day);
+                text2.setText(year + ". " + month + ". " + day);
+
+
+                if(content1.getVisibility() == View.GONE){
+                    content1.setVisibility(View.VISIBLE);
+                    content2.setVisibility(View.GONE);
+                }
+                else{
+                    content2.setVisibility(View.VISIBLE);
+                    content1.setVisibility(View.GONE);
+                }
+
+                Date to = new Date(now);
+                if(today.toString() != to.toString()){
+                    today.setText("");
+                }
+                else{
+                    today.setText("TODAY");
+                }
             }
         });
     }

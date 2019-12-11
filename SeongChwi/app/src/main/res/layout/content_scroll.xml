@@ -52,6 +52,7 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/today"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -194,7 +195,7 @@
                 android:textColor="#715392"/>
         </LinearLayout>
 
-        <include layout="@layout/img_scroll"></include>
+        <include layout="@layout/img_scroll1"></include>
 
     </LinearLayout>
 
