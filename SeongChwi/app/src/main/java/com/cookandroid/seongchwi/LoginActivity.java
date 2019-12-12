@@ -17,7 +17,7 @@ public class LoginActivity extends BaseActivity {
     TextView signup_text;
 
     String Id = "seongchwi";
-    String Password = "1111";
+    String Password = "1111aaaa";
 
     String id, pwd;
 
